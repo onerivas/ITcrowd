@@ -1,13 +1,12 @@
 
 public class Engineer extends Employee {
 	
-	private boolean onAProject;
-	private String currentProject = "none";
+	private boolean onAProject = false ;
+	private String currentProject = "Not on a project";
 	
-	public Engineer(String currentProject)
+	public Engineer(String name, String department, String seniority, int yearlySalary)
 	{
-		this.currentProject = currentProject;
-		this.onAProject = true;
+		super(name, department, seniority, yearlySalary);
 	}
 	
 	public Engineer() {}
@@ -35,6 +34,13 @@ public class Engineer extends Employee {
 	public void setNoCurrentProject()
 	{
 		currentProject = "none";
+	}
+	
+	
+	@Override
+	public String getEmployeeInfo()
+	{
+		return super.getEmployeeInfo() + ", Currently on a Project: " + onAProject + ", Project Name: " + currentProject;
 	}
 
 }

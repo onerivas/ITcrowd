@@ -1,12 +1,14 @@
-import java.util.ArrayList;
+import java.util.*;
 
-public abstract class Department {
+public abstract class Department implements SalaryInTimeRange {
 	
-	private ArrayList<Employee> members = new ArrayList<Employee>();
+	public List<Employee> members = new ArrayList<Employee>();
+	public int departmentSize = 0;
 	
 
-	public Department(ArrayList<Employee> members) {
+	public Department(List<Employee> members) {
 		this.members = members;
+		this.departmentSize = members.size();
 	}
 	
 	public Department()
@@ -18,26 +20,40 @@ public abstract class Department {
 	{
 		int departmentYearlySalary = 0;
 		
-		for (int i = 0; i < members.size() - 1; i++)
-		{
-			departmentYearlySalary += members.get(i).getSalary();
+		if(members.size() > 0){
+			
+			
+			for (Employee member: members)
+			{
+				departmentYearlySalary += member.getSalary();
+			}
+			
+			 
 		}
-		
-		return departmentYearlySalary;
-	}
+			return departmentYearlySalary;
+		}
+	
 	
 	public String getAllMembers()
 	{
-		String allMembers = "";
-		
-		for (int i = 0; i < members.size() - 1; i++)
+		if(members.size() > 0){
+			
+			String allMembers = "";
+			
+			for (Employee member: members)
+			{
+				allMembers += member.getEmployeeInfo() + "\n";
+			}
+			
+			return allMembers;
+			
+			 
+		}
+		else
 		{
-			allMembers += members.get(i).getName() + " ";
+			return "No Employees in this department";
 		}
 		
-		allMembers = "[ " + allMembers.substring(0, members.size() - 1) + "]";
-		
-		return allMembers; 
 	}
 	
 	public void addMember(Employee newMember)
@@ -48,6 +64,31 @@ public abstract class Department {
 	public void removeMember(Employee memberToRemove)
 	{
 		members.remove(memberToRemove);
+	}
+	
+	public int dailySalary()
+	{
+		return getDepartmentYearlySalary()/DAYS_IN_A_YEAR;
+	}
+	
+	public int weeklySalary()
+	{
+		return getDepartmentYearlySalary()/WEEKS_IN_A_YEAR;
+	}
+	
+	public int monthlySalary()
+	{
+		return getDepartmentYearlySalary()/MONTHS_IN_A_YEAR;
+	}
+	
+	public int quarterlySalary()
+	{
+		return getDepartmentYearlySalary()/3;
+	}
+
+	public void removeAll() {
+		members.clear();
+		
 	}
 
 }

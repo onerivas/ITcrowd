@@ -1,12 +1,12 @@
 
-public abstract class Employee {
+public abstract class Employee implements SalaryInTimeRange {
 	
-		private String name;
-		private String department;
-		private String seniority;
-		private int yearlySalary;
+		public String name;
+		public String department;
+		public String seniority;
+		int yearlySalary;
 
-	public Employee(String name, String department, String seniority, int yearlySalary) {
+	Employee(String name, String department, String seniority, int yearlySalary) {
 		this.name = name;
 		this.department = department;
 		this.seniority = seniority;
@@ -58,5 +58,31 @@ public abstract class Employee {
 	{
 		yearlySalary = newSalary;
 	}
-
+	
+	public int dailySalary()
+	{
+		return yearlySalary/DAYS_IN_A_YEAR;
+	}
+	
+	public int weeklySalary()
+	{
+		return yearlySalary/WEEKS_IN_A_YEAR;
+	}
+	
+	public int monthlySalary()
+	{
+		return yearlySalary/MONTHS_IN_A_YEAR;
+	}
+	
+	public int quarterlySalary()
+	{
+		return yearlySalary/3;
+	}
+	
+	
+	public String getEmployeeInfo()
+	{
+		return "Employees Name: " + name + ", Department: " + department + ", Seniority: " + seniority + ", Salary: " + yearlySalary;
+	}
+	
 }
