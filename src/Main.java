@@ -47,8 +47,7 @@ public class Main
 		engineering.assignToTeam(rRivas);
 		
 		System.out.println(engineering.getTeam(0));
-		System.out.println(engineering.getTeams());
-		System.out.println(engineering.getAllTeamsWithMembers());
+		System.out.println(engineering.getTeamSalaries());
 		
 		
 		

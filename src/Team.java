@@ -5,6 +5,7 @@ public class Team implements SalaryInTimeRange {
 	
 	public String teamName;
 	public int teamSize = 0;
+	public int teamSalary = 0;
 	
 	ArrayList<Employee> teamMembers = new ArrayList<Employee>();
 
@@ -19,6 +20,15 @@ public class Team implements SalaryInTimeRange {
 	public String getTeamName()
 	{
 		return teamName;
+	}
+	
+	public int getTeamSalary()
+	{
+		for (Employee member: teamMembers)
+		{
+			teamSalary += member.yearlySalary;
+		}
+		return teamSalary;
 	}
 	
 	public void addMember(Employee newMember)
@@ -60,26 +70,31 @@ public class Team implements SalaryInTimeRange {
 		
 	}
 
-	@Override
-	public int dailySalary() {
-		// TODO Auto-generated method stub
-		return 0;
+	public int dailySalary(int timePeriod) {
+		
+		return this.getTeamSalary()/timePeriod;
 	}
 
-	@Override
+
 	public int weeklySalary() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	@Override
+
 	public int monthlySalary() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	@Override
+
 	public int quarterlySalary() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	public int dailySalary() {
 		// TODO Auto-generated method stub
 		return 0;
 	}

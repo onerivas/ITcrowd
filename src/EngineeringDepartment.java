@@ -62,6 +62,19 @@ public class EngineeringDepartment extends Department {
 		return teams;
 	}
 	
+	public String getTeamSalaries()
+	{
+		String teamSalaries = "";
+		
+		for (Team team: listOfTeams)
+		{
+			teamSalaries += "Salary for " + team.getTeamName() + ": " + team.getTeamSalary() + "\n";
+		}
+		
+		return teamSalaries;
+	}
+	
+	
 	public String getTeam(int index)
 	{
 		return this.listOfTeams.get(index).getTeamName() + ": " + this.listOfTeams.get(index).getAllMembers();
