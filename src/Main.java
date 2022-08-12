@@ -16,26 +16,51 @@ public class Main
 		System.out.println(engineering.getAllMembers());
 		System.out.println(engineering.getDepartmentYearlySalary());
 		
-		Engineer RRivas = new Engineer("Robin Rivas", "Engineering", "Junior", 80000);
+		Engineer rRivas = new Engineer("Robin Rivas", "Engineering", "Junior", 80000);
 		
-		engineering.addMember(RRivas);
-		System.out.println(engineering.getAllMembers());
-		System.out.println(engineering.getDepartmentYearlySalary());
+		engineering.addMember(rRivas);
+		//System.out.println(engineering.getAllMembers());
+		//System.out.println(engineering.getDepartmentYearlySalary());
 		
 		
 		engineering.assignToTeam(jRivas);
+		engineering.assignToTeam(rRivas);
+		engineering.assignToTeam(jRivas);
+		engineering.assignToTeam(rRivas);
+		engineering.assignToTeam(jRivas);
+		engineering.assignToTeam(rRivas);
+		engineering.assignToTeam(jRivas);
+		engineering.assignToTeam(rRivas);
+		engineering.assignToTeam(jRivas);
+		engineering.assignToTeam(rRivas);
+		engineering.assignToTeam(jRivas);
+		engineering.assignToTeam(rRivas);
+		engineering.assignToTeam(jRivas);
+		engineering.assignToTeam(rRivas);
+		engineering.assignToTeam(jRivas);
+		engineering.assignToTeam(rRivas);
+		engineering.assignToTeam(jRivas);
+		engineering.assignToTeam(rRivas);
+		engineering.assignToTeam(jRivas);
+		engineering.assignToTeam(rRivas);
+		engineering.assignToTeam(jRivas);
+		engineering.assignToTeam(rRivas);
+		
+		System.out.println(engineering.getTeam(0));
+		System.out.println(engineering.getTeams());
+		System.out.println(engineering.getAllTeamsWithMembers());
 		
 		
 		
 		
 		
-		CEO Azteca = new CEO("Azteca", "Leadership", "Partner", 340000000);
+		/*CEO Azteca = new CEO("Azteca", "Leadership", "Partner", 340000000);
 		
 		Azteca.fireDepartment(engineering);
 		
 		System.out.println(engineering.getAllMembers());
 		
-		
+		*/
 	
 	
 	

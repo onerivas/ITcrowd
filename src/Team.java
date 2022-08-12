@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 
-public class Team {
+public class Team implements SalaryInTimeRange {
 	
 	public String teamName;
 	public int teamSize = 0;
@@ -14,6 +14,11 @@ public class Team {
 	
 	public Team(String teamName) {
 		this.teamName = teamName;
+	}
+	
+	public String getTeamName()
+	{
+		return teamName;
 	}
 	
 	public void addMember(Employee newMember)
@@ -53,5 +58,29 @@ public class Team {
 			return "No Team Members";
 		}
 		
+	}
+
+	@Override
+	public int dailySalary() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int weeklySalary() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int monthlySalary() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int quarterlySalary() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

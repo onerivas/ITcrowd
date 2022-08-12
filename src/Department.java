@@ -59,11 +59,13 @@ public abstract class Department implements SalaryInTimeRange {
 	public void addMember(Employee newMember)
 	{
 		members.add(newMember);
+		departmentSize++;
 	}
 	
 	public void removeMember(Employee memberToRemove)
 	{
 		members.remove(memberToRemove);
+		departmentSize--;
 	}
 	
 	public int dailySalary()
