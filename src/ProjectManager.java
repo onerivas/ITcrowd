@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class ProjectManager {
+public class ProjectManager extends Employee {
 
 	private ArrayList<String> currentProjects = new ArrayList<String>();
 	

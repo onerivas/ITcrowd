@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-abstract class Department {
+public abstract class Department {
 	
 	private ArrayList<Employee> members = new ArrayList<Employee>();
 	
